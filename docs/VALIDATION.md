@@ -21,7 +21,7 @@ npm run dev
 
 ## Status
 
-Authored test suite; execution and CI confirmation pending. A published workflow is not a CI pass. In the first milestone, browser gameplay and emulator runtime validation are not claimed.
+GitHub Actions CI run #1 (37885038097) completed successfully on commit `5d7af0f6` with install, test, typecheck and production build passing. A direct browser interaction test and native emulator test have not been performed. Source code is still subject to review.
 
 ## Future gates
 
