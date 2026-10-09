@@ -4,7 +4,7 @@
 
 MIPS Quest is a proposed interactive N64 ROM-hacking adventure. It will teach assembly through a playable world connected to a verifiable CPU simulator, then bridge into safe modification of user-supplied game ROMs.
 
-> **Current phase: Milestone A (foundation).** The web app contains a **read-only CPU diagnostic**, not yet a game or interactive programming course. See [Project Status](docs/PROJECT-STATUS.md) for the implemented boundary.
+> **Current phase: Milestone A (foundation).** The web app now includes a **small editable MIPS assembly sandbox** and a CPU diagnostic, but it is not yet a complete game or lesson campaign. See [Project Status](docs/PROJECT-STATUS.md) for the implemented boundary.
 
 ## Quick start
 
@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Then open the local Vite URL. Click **STEP INSTRUCTION** to watch a tiny MIPS program execute and power a simulated beacon. **RESET** restarts it. The source is fixed intentionally: code editing and the assembler arrive in Milestone B.
+Then open the local Vite URL. Edit the MIPS program, select **ASSEMBLE & LOAD**, then use **STEP** or **RUN** to execute it. The simulated beacon activates only when its mapped memory word receives the value 3. **RESET** restores the loaded program. Branches, delay slots and rewind are not yet available.
 
 ```bash
 npm run test       # Node-based CPU tests
@@ -27,6 +27,7 @@ npm run build      # CPU and web build
 
 - `apps/web/` — React/Vite shell with live CPU diagnostic.
 - `packages/mips-core/` — headless MIPS execution engine and tests.
+- `packages/mips-assembler/` — bounded MIPS source-to-word assembler, diagnostics and tests.
 - `docs/PROJECT-STATUS.md` — canonical implemented capability record.
 - `docs/GAME-DESIGN.md` — campaign, mechanics and first playable vertical slice.
 - `docs/CURRICULUM.md` — beginner education and source corrections.
@@ -36,7 +37,7 @@ npm run build      # CPU and web build
 
 ## Current limitations
 
-Only `nop`, `addiu`, `ori`, `lui`, `lw`, and `sw` are supported. This is not a complete R4300i/N64 emulator. No assembly editor, adventure missions, backstepping, progression saves, real ROM patcher or native ROM execution are implemented yet.
+Only `nop`, `addiu`, `ori`, `lui`, `lw`, and `sw` are supported. This is not a complete R4300i/N64 emulator. Code editing and assembly are real but intentionally bounded; no labels, macros, branches, delay slots, adventure missions, backstepping, progression saves, real ROM patcher or native ROM execution are implemented yet.
 
 ## Copyright and safety
 
@@ -48,7 +49,7 @@ Work on dedicated branches and submit PRs with tests and updated source-of-truth
 
 ## Online playtesting (GitHub Pages)
 
-Development builds are intended to publish at [the MIPS Quest Pages site](https://smeagol44.github.io/MIPS-QUEST/) from `main` using `.github/workflows/pages.yml`. This link is **not considered live** until the first Pages deployment succeeds.
+Development builds are intended to publish at [the MIPS Quest Pages site](https://smeagol44.github.io/MIPS-QUEST/) from `main` using `.github/workflows/pages.yml`. GitHub Actions first deployed the playtest successfully in [Pages run #37885644956](https://github.com/smeagol44/MIPS-QUEST/actions/runs/37885644956). Manual browser smoke testing is still requested.
 
 To enable: Settings → Pages → Build and deployment → Source: **GitHub Actions**. After a merge or manual workflow dispatch, check the [Actions page](https://github.com/smeagol44/MIPS-QUEST/actions) for the Pages workflow, and follow its deployed environment URL.
 

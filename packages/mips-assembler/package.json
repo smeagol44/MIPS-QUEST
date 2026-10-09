@@ -1,7 +1,7 @@
 {
-  "name": "@mips-quest/mips-core",
-  "version": "0.1.0",
+  "name": "@mips-quest/mips-assembler",
   "private": true,
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

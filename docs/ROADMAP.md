@@ -14,10 +14,12 @@
 - [x] Merge verified foundation PR #1 into `main`.
 - [x] Add official GitHub Actions Pages workflow and release/playtest documentation.
 - [x] Fix read-only beacon diagnostic address offset and add a regression test.
-- [ ] Verify Pages deploy workflow and public site availability.
+- [x] Verify GitHub Actions Pages deployment success (run #37885644956); independent HTTP/browser validation remains pending.
 - [ ] Complete maintainer browser interaction smoke test.
 
 ## Milestone B — Living processor
+
+- [x] First bounded assembler/editor increment prepared: NOP, ADDIU, ORI, LUI, LW, SW, line errors, Assemble & Load and bounded Run. CI and browser validation pending.
 
 - Browser assembler/editor with diagnostics; verified MIPS instruction encodings.
 - Accurate branch/jump/delay-slot execution and edge-case testing.

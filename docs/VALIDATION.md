@@ -34,3 +34,11 @@ Deployment workflow: `.github/workflows/pages.yml` (push to `main`, plus manual 
 A passing upload/deploy Actions run is required before claiming the site is published. Browser manual test: visit the published URL, step four times, verify beacon activates and `$t1` reads 3, then RESET and verify initial state returns. No manual browser runtime validation claimed until actually performed.
 
 A new regression test executes the beacon program through the real core and verifies stores/loads at the same mapped address used by the web demo.
+
+## Verified Pages Action deployment
+
+GitHub Actions [run #37885644956](https://github.com/smeagol44/MIPS-QUEST/actions/runs/37885644956) completed successfully for main SHA `c61caab7` with tests, typecheck, build, artifact upload and Pages deployment. The workflow reported `https://smeagol44.github.io/MIPS-QUEST/` as its environment URL. Direct browser interaction proof has **not** been recorded.
+
+## Milestone B initial assembler/editor checks
+
+Tests added for instruction encoding, immediate ranges, operand counts, unsupported operations, source length, diagnostics, and compiling/running different valid beacon programs. Pending: confirm CI on the feature branch and manually verify the new editable UI on Pages after merge.
