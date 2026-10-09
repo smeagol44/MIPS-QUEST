@@ -81,3 +81,20 @@ test("loading invalid code cannot partially overwrite the running program", () =
   assert.throws(() => cpu.loadWords(base, [0x24090001, -1]), RangeError);
   assert.equal(cpu.readWord(base), 0x24080003);
 });
+
+test("the web diagnostic beacon program powers the mapped device and restores on reset", () => {
+  const beacon = base + 0x100;
+  const cpu = machine({ 16: BigInt.asIntN(64, BigInt(beacon)) });
+  cpu.loadWords(base, [0x24080003, 0xae080000, 0x8e090000, 0]);
+  assert.equal(cpu.readWord(beacon), 0);
+  cpu.step();
+  assert.equal(cpu.snapshot().gpr[8], 3n);
+  cpu.step();
+  assert.equal(cpu.readWord(beacon), 3);
+  cpu.step();
+  assert.equal(cpu.snapshot().gpr[9], 3n);
+  cpu.step();
+  assert.equal(cpu.snapshot().retiredInstructions, 4);
+  cpu.reset();
+  assert.equal(cpu.readWord(beacon), 0);
+});

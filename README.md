@@ -45,3 +45,11 @@ Do not commit commercial ROMs, BIOSes, or proprietary Nintendo assets. Future RO
 ## Contributing
 
 Work on dedicated branches and submit PRs with tests and updated source-of-truth docs. Never describe a planned feature as runtime-verified until its documented validation gate passes.
+
+## Online playtesting (GitHub Pages)
+
+Development builds are intended to publish at [the MIPS Quest Pages site](https://smeagol44.github.io/MIPS-QUEST/) from `main` using `.github/workflows/pages.yml`. This link is **not considered live** until the first Pages deployment succeeds.
+
+To enable: Settings → Pages → Build and deployment → Source: **GitHub Actions**. After a merge or manual workflow dispatch, check the [Actions page](https://github.com/smeagol44/MIPS-QUEST/actions) for the Pages workflow, and follow its deployed environment URL.
+
+Pages is a **public playtesting venue**, not the final 1.0 hosting decision. Work continues via branches and PRs; Pages does not publish unmerged PRs.

@@ -30,3 +30,9 @@ Instruction execution and state snapshots remain authoritative; visual animation
 ## Architectural decisions
 
 See \`docs/adr/0001-foundation.md\`.
+
+## Hosting boundary
+
+GitHub Actions CI is an independent check on pull requests. The separate Pages workflow publishes `apps/web/dist` only after a push to `main` or manual dispatch, and it reruns install/tests/typecheck/build. Vite uses relative asset URLs (`base: "./"`) so the output works under the GitHub Pages repository subpath without baking in production hosting assumptions.
+
+Pages is a public developer playtest distribution, not a guarantee of version stability or the eventual 1.0 production URL. Workflow deployment is separate from core-machine correctness and gameplay acceptance.
