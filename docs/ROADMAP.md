@@ -19,7 +19,7 @@
 
 ## Milestone B — Living processor
 
-- [x] First bounded assembler/editor increment prepared: NOP, ADDIU, ORI, LUI, LW, SW, line errors, Assemble & Load and bounded Run. CI and browser validation pending.
+- [x] First bounded assembler/editor increment merged (PR #3): NOP, ADDIU, ORI, LUI, LW, SW, line errors, Assemble & Load and bounded Run. CI and Pages deployment passed; browser interaction proof still pending.
 
 - Browser assembler/editor with diagnostics; verified MIPS instruction encodings.
 - Accurate branch/jump/delay-slot execution and edge-case testing.

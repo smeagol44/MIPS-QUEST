@@ -41,4 +41,4 @@ GitHub Actions [run #37885644956](https://github.com/smeagol44/MIPS-QUEST/action
 
 ## Milestone B initial assembler/editor checks
 
-Tests added for instruction encoding, immediate ranges, operand counts, unsupported operations, source length, diagnostics, and compiling/running different valid beacon programs. Pending: confirm CI on the feature branch and manually verify the new editable UI on Pages after merge.
+Tests added for instruction encoding, immediate ranges, operand counts, unsupported operations, source length, diagnostics, and compiling/running different valid beacon programs. GitHub Actions CI [run #37886116994](https://github.com/smeagol44/MIPS-QUEST/actions/runs/37886116994) passed test, typecheck and build for PR #3. The [Pages run #37886182419](https://github.com/smeagol44/MIPS-QUEST/actions/runs/37886182419) successfully deployed main commit `cff61d7`. Manual browser smoke test of the editable UI remains pending.
