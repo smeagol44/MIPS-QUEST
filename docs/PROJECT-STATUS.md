@@ -21,7 +21,7 @@ Playable missions, learner code editing/assembly, branches and delay slots, stac
 
 ## Verification boundary
 
-Local Node-based tests are required before acceptance. GitHub Actions status must be separately confirmed; publication of a workflow file does not imply a passing run.
+GitHub Actions CI run #1 (37885038097) passed on commit `5d7af0f6`: dependency install, automated tests, TypeScript typecheck and production build. A local graphical/browser interaction test has not been performed; the running app remains an unreviewed diagnostic.
 
 ## Next milestone
 
