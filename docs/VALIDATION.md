@@ -26,3 +26,11 @@ GitHub Actions CI run #1 (37885038097) completed successfully on commit `5d7af0f
 ## Future gates
 
 Semantic differential fixtures, instruction assembly/disassembly identity tests, reversible execution tests, deterministic multi-seed mission validation, accessibility, end-to-end gameplay and bounded real-ROM emulator proofs.
+
+## Pages playtest deployment
+
+Deployment workflow: `.github/workflows/pages.yml` (push to `main`, plus manual dispatch). It runs install, unit tests, typecheck and build before publishing only `apps/web/dist`. GitHub Pages must be configured with **Source: GitHub Actions** in repository Settings → Pages.
+
+A passing upload/deploy Actions run is required before claiming the site is published. Browser manual test: visit the published URL, step four times, verify beacon activates and `$t1` reads 3, then RESET and verify initial state returns. No manual browser runtime validation claimed until actually performed.
+
+A new regression test executes the beacon program through the real core and verifies stores/loads at the same mapped address used by the web demo.

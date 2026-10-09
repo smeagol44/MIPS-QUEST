@@ -6,7 +6,7 @@
 
 Milestone A — foundational application and MIPS core contracts, under review on branch \`milestone-a/foundation\`.
 
-## Implemented in this milestone
+## Implemented in Milestone A
 
 - npm workspace monorepo with React/Vite shell and standalone TypeScript CPU package.
 - Executable narrow MIPS subset: NOP, ADDIU, ORI, LUI, LW, SW.
@@ -26,3 +26,9 @@ GitHub Actions CI run #1 (37885038097) passed on commit `5d7af0f6`: dependency i
 ## Next milestone
 
 Milestone B: extend simulator correctness, add assembler and editor, branch/delay semantics, rewind or reversible events, and richer visualization before introducing authored missions.
+
+## GitHub Pages playtesting
+
+Deployment via GitHub Actions is introduced in the `infra/github-pages-playtest` PR and remains **pending successful deployment validation** until a Pages Actions run completes and the actual public URL responds. Future web experiences publish only from reviewed changes to `main`. Pages is a public playtest build, **not** the version-1.0 production environment.
+
+The initial diagnostic beacon machine code has been corrected to address `0($s0)` with `$s0 = 0x80000100` instead of mistakenly storing to `0x100($s0)`. A full beacon-execution regression is added to CPU tests.

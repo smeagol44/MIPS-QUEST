@@ -4,8 +4,8 @@ import { createMachine, MachineFault, type MachineEvent, type MachineSnapshot } 
 /** Fixed program for Milestone A. User-authorable assembly arrives in Milestone B. */
 const program = [
   { source: "addiu $t0, $zero, 3", word: 0x24080003, help: "Put the value 3 into temporary register $t0." },
-  { source: "sw    $t0, 0($s0)", word: 0xae080100, help: "Store the register value at the sandbox beacon address." },
-  { source: "lw    $t1, 0($s0)", word: 0x8e090100, help: "Read that value back into another register." },
+  { source: "sw    $t0, 0($s0)", word: 0xae080000, help: "Store the register value at the sandbox beacon address." },
+  { source: "lw    $t1, 0($s0)", word: 0x8e090000, help: "Read that value back into another register." },
   { source: "nop", word: 0x00000000, help: "Perform no operation." },
 ] as const;
 const start = 0x80000000;

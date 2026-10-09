@@ -9,6 +9,14 @@
 - [x] Add CPU unit tests, CI workflow and root scripts
 - [x] Confirm install, tests, typecheck, production build and initial PR CI green (run #1, commit `5d7af0f6`). Browser interaction test remains pending.
 
+## Milestone A.1 — GitHub Pages playtesting
+
+- [x] Merge verified foundation PR #1 into `main`.
+- [x] Add official GitHub Actions Pages workflow and release/playtest documentation.
+- [x] Fix read-only beacon diagnostic address offset and add a regression test.
+- [ ] Verify Pages deploy workflow and public site availability.
+- [ ] Complete maintainer browser interaction smoke test.
+
 ## Milestone B — Living processor
 
 - Browser assembler/editor with diagnostics; verified MIPS instruction encodings.
@@ -26,7 +34,7 @@
 ## Milestone D — Polish / beta
 
 - UX review, comprehensive gameplay and conformance tests.
-- Performance, keyboard accessibility, visual polish, preview deployment.
+- Performance, keyboard accessibility, visual polish and regression validation on the Pages playtesting build.
 
 ## Later
 
