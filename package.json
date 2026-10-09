@@ -1,0 +1,21 @@
+{
+  "name": "mips-quest",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run build:core && npm run dev -w @mips-quest/web",
+    "build:core": "npm run build -w @mips-quest/mips-core",
+    "build": "npm run build:core && npm run build -w @mips-quest/web",
+    "test": "npm run build:core && node --test packages/mips-core/tests/*.test.mjs",
+    "typecheck": "npm run typecheck -w @mips-quest/mips-core && npm run typecheck -w @mips-quest/web",
+    "check": "npm run test && npm run typecheck"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
