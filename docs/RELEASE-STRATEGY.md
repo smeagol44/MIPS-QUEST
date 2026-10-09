@@ -31,3 +31,5 @@ Never mark a feature as complete only because code was merged. Use `docs/PROJECT
 ## First deployment evidence
 
 GitHub Actions Pages run #37885644956 succeeded for main commit `c61caab7` on October 9, 2026, reporting `https://smeagol44.github.io/MIPS-QUEST/`. Manual browser smoke testing remains outstanding. Reviewed `main` merges publish to the playtesting environment; a separate site will host the eventual 1.0 release.
+
+Milestone B1 editable-assembly workbench: merged in PR #3 and deployed successfully by [Pages run #37886182419](https://github.com/smeagol44/MIPS-QUEST/actions/runs/37886182419), main commit `cff61d7`. Browser manual acceptance has not yet been recorded.

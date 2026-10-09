@@ -4,7 +4,7 @@
 
 ## Current phase
 
-Milestone A was merged in PR #1. GitHub Pages playtesting was merged in PR #2 and deployed successfully. The first Milestone B assembler/editor increment is under review.
+Milestone A was merged in PR #1. GitHub Pages playtesting was merged in PR #2 and deployed successfully. The first Milestone B assembler/editor increment was merged in PR #3, CI green; GitHub Pages deployment succeeded.
 
 ## Implemented in Milestone A
 
@@ -25,7 +25,7 @@ GitHub Actions CI run #1 (37885038097) passed on commit `5d7af0f6`: dependency i
 
 ## Next milestone
 
-Milestone B: extend simulator correctness, add assembler and editor, branch/delay semantics, rewind or reversible events, and richer visualization before introducing authored missions.
+Milestone B next: verify branch/jump/delay-slot semantics, add breakpoints and reversible execution, improve visualization, then introduce the authored mission engine.
 
 ## GitHub Pages playtesting
 
@@ -33,6 +33,8 @@ Deployment via GitHub Actions was merged in PR #2. The Pages [run #37885644956](
 
 The initial diagnostic beacon machine code has been corrected to address `0($s0)` with `$s0 = 0x80000100` instead of mistakenly storing to `0x100($s0)`. A full beacon-execution regression is added to CPU tests.
 
-## Milestone B first increment (review branch)
+## Milestone B first increment (merged into main)
+
+CI passed on PR #3 (run #37886116994). Pages deployment of the first editor workbench passed (run #37886182419). Manual browser interaction remains unverified.
 
 A bounded educational assembler translates learner-written NOP, ADDIU, ORI, LUI, LW, and SW into actual machine words. The page exposes editable source, Assemble & Load, Step, bounded Run, Reset, line-aware errors and resulting CPU/register/beacon feedback. Assembler and compiler-to-machine integration tests cover alternative correct programs. This is a **diagnostic sandbox**, not a full mission, native ROM assembler or console emulator.
