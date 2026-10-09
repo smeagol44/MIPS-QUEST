@@ -7,7 +7,7 @@
 - [x] Bootstrap React/Vite web application
 - [x] Define typed machine contracts and bounded executable CPU
 - [x] Add CPU unit tests, CI workflow and root scripts
-- [ ] Confirm install, tests, typecheck, production build and PR CI green
+- [x] Confirm install, tests, typecheck, production build and initial PR CI green (run #1, commit `5d7af0f6`). Browser interaction test remains pending.
 
 ## Milestone B — Living processor
 
