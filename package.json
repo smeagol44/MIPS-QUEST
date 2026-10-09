@@ -8,12 +8,13 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run build:core && npm run dev -w @mips-quest/web",
+    "dev": "npm run build:core && npm run build:assembler && npm run dev -w @mips-quest/web",
     "build:core": "npm run build -w @mips-quest/mips-core",
-    "build": "npm run build:core && npm run build -w @mips-quest/web",
-    "test": "npm run build:core && node --test packages/mips-core/tests/*.test.mjs",
-    "typecheck": "npm run typecheck -w @mips-quest/mips-core && npm run typecheck -w @mips-quest/web",
-    "check": "npm run test && npm run typecheck"
+    "build": "npm run build:core && npm run build:assembler && npm run build -w @mips-quest/web",
+    "test": "npm run build:core && npm run build:assembler && node --test packages/mips-core/tests/*.test.mjs packages/mips-assembler/tests/*.test.mjs",
+    "typecheck": "npm run typecheck -w @mips-quest/mips-core && npm run typecheck -w @mips-quest/mips-assembler && npm run typecheck -w @mips-quest/web",
+    "check": "npm run test && npm run typecheck",
+    "build:assembler": "npm run build -w @mips-quest/mips-assembler"
   },
   "engines": {
     "node": ">=22.12.0"

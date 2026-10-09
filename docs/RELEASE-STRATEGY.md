@@ -27,3 +27,7 @@ A meaningful 1.0 should provide a real adventure with the full foundational prog
 ## Version / documentation discipline
 
 Never mark a feature as complete only because code was merged. Use `docs/PROJECT-STATUS.md` for implemented/verified truth, `docs/VALIDATION.md` for evidence, `docs/ROADMAP.md` for pending work, and an ADR for architectural decisions. Maintain experimental, validated and released as separate states.
+
+## First deployment evidence
+
+GitHub Actions Pages run #37885644956 succeeded for main commit `c61caab7` on October 9, 2026, reporting `https://smeagol44.github.io/MIPS-QUEST/`. Manual browser smoke testing remains outstanding. Reviewed `main` merges publish to the playtesting environment; a separate site will host the eventual 1.0 release.

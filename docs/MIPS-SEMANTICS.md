@@ -18,3 +18,7 @@ The CPU implementation is a bounded, educational R4300i-inspired machine, **not*
 (1) Signedness/overflow edges; (2) zero-register invariance; (3) memory alignment and boundary faults; (4) invalid opcodes must leave state intact; (5) PC movement, delay-slot ordering when added; (6) stack/return semantics; (7) cross-check with established ISA references or emulator traces.
 
 An instruction decoder test pass is not proof of physical N64 compatibility.
+
+## Educational assembler
+
+The first assembler accepts precisely the six implemented native instructions above. Comments, decimal and hexadecimal immediates, GPR aliases and base+signed-offset memory syntax are supported. Labels, directives, jumps, branches, macros and pseudo-instructions are **not** accepted. Its verification requires known instruction-word encodings and integrated CPU execution tests, not merely syntax acceptance.

@@ -4,7 +4,8 @@
 
 - \`apps/web\`: React/Vite presentation shell. Milestone A includes a read-only stepping diagnostic, not yet a Phaser adventure.
 - \`packages/mips-core\`: headless deterministic educational CPU. No web APIs or framework dependencies.
-- Future: assembler/editor, mission engine, graphical adventure, progression store, ROM Forge, game adapters and emulator bridge.
+- `packages/mips-assembler`: strict subset assembler translates learner text into real instruction words with diagnostics; the web app limits source to 32 instructions.
+- Future: labels/control-flow assembler, mission engine, graphical adventure, progression store, ROM Forge, game adapters and emulator bridge.
 - \`tools/rom-patcher\` is reserved for a later Python + armips workflow.
 
 ## Current CPU API
@@ -36,3 +37,7 @@ See \`docs/adr/0001-foundation.md\`.
 GitHub Actions CI is an independent check on pull requests. The separate Pages workflow publishes `apps/web/dist` only after a push to `main` or manual dispatch, and it reruns install/tests/typecheck/build. Vite uses relative asset URLs (`base: "./"`) so the output works under the GitHub Pages repository subpath without baking in production hosting assumptions.
 
 Pages is a public developer playtest distribution, not a guarantee of version stability or the eventual 1.0 production URL. Workflow deployment is separate from core-machine correctness and gameplay acceptance.
+
+## Browser assembler/editor contract (Milestone B initial)
+
+Assembly source is untrusted plain text, never JavaScript or filesystem directives. Only native NOP, ADDIU, ORI, LUI, LW and SW are accepted. The assembler returns unsigned machine words and 1-based source-line metadata. The web app caps programs at 32 instructions and Run at 32 retired instructions, surfacing machine faults to the user. The editor is a development sandbox, not a complete mission engine. For real ROM patching the planned backend remains verified Python + armips; the small browser assembler does not replace armips.
